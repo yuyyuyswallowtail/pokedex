@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
 
-function PokemonSprite({ spriteUrl }: { spriteUrl: string }) {
+function PokemonSprite({ spriteUrl: _spriteUrl }: { spriteUrl: string }) {
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
       <sprite scale={[2, 2, 1]}>

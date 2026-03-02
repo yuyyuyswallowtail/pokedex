@@ -20,7 +20,7 @@ export function PokemonGrid({ pokemon, isLoading, hasMore = false, onLoadMore }:
   const handleObserver = useCallback(
     (entries: IntersectionObserverEntry[]) => {
       const [target] = entries;
-      if (target.isIntersecting && hasMore && !isLoading && onLoadMore) {
+      if (target?.isIntersecting && hasMore && !isLoading && onLoadMore) {
         onLoadMore();
       }
     },

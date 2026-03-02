@@ -70,11 +70,9 @@ function FloatingPokeball() {
 
 interface Pokeball3DProps {
   className?: string;
-  color1?: string;
-  color2?: string;
 }
 
-export function Pokeball3D({ className = '', color1, color2 }: Pokeball3DProps) {
+export function Pokeball3D({ className = '' }: Pokeball3DProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
