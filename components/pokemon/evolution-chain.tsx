@@ -12,17 +12,6 @@ interface EvolutionChainProps {
   currentId: number;
 }
 
-function extractEvolutionIds(chain: ChainLink, ids: number[] = []): number[] {
-  const match = chain.species.url.match(/\/pokemon-species\/(\d+)\//);
-  if (match) {
-    ids.push(parseInt(match[1] ?? '0', 10));
-  }
-  chain.evolves_to.forEach((evolution) => {
-    extractEvolutionIds(evolution, ids);
-  });
-  return ids;
-}
-
 function flattenChain(chain: ChainLink): Array<{ id: number; name: string; evolvesTo: string[] }> {
   const result: Array<{ id: number; name: string; evolvesTo: string[] }> = [];
   
