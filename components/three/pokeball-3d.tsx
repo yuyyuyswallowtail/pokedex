@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
+import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Float } from '@react-three/drei';
 import * as THREE from 'three';
@@ -16,9 +16,6 @@ function Pokeball({ color1 = '#ff0000', color2 = '#ffffff' }: { color1?: string;
       meshRef.current.rotation.y = state.clock.elapsedTime * 0.2;
     }
   });
-
-  // Create ball geometry
-  const geometry = useMemo(() => new THREE.SphereGeometry(1, 64, 64), []);
 
   return (
     <group>
